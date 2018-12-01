@@ -46,7 +46,12 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	public String deleteUser(Long customerId) {
-		return repo.deleteUser(customerId);
+
+		if (customerId == 1) {
+			return "{\"message\": \"Cannot Delete Customer\"}";
+		} else {
+			return repo.deleteUser(customerId);
+		}
 	}
 
 	public String deleteFlight(Long flightId) {

@@ -55,7 +55,12 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	public String deleteFlight(Long flightId) {
-		return repo.deleteFlight(flightId);
+
+		if (flightId <= 2) {
+			return "{\"message\": \"Cannot Delete Flight\"}";
+		} else {
+			return repo.deleteFlight(flightId);
+		}
 	}
 
 	// flight destinations

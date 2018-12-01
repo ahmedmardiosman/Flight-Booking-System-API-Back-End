@@ -1,4 +1,4 @@
-package com.qa.buisiness.service;
+package com.qa.business.service;
 
 import javax.inject.Inject;
 
@@ -38,7 +38,11 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	public String updateUser(Long customerId, String updatedUser) {
-		return repo.updateUser(customerId, updatedUser);
+		if (customerId == 1) {
+			return "{\"message\": \"Cannot Update Customer\"}";
+		} else {
+			return repo.updateUser(customerId, updatedUser);
+		}
 	}
 
 	public String updateFlight(Long flightId, String updatedFlight) {

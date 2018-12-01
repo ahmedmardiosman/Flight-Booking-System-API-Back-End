@@ -9,7 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.qa.buisiness.service.FlightService;
+import com.qa.business.service.FlightService;
 
 @Path("/QAFBS")
 public class FlightEndpoints {
